@@ -1,15 +1,13 @@
 from rest_framework import serializers
-
-from models. import Libro, Autor
-
-
+from biblioteca.models import Autor
+from biblioteca.models import Libro
 
 class AutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Autor
-        fields = ['id', 'nombre', 'nacionalidad', 'anio_nacimiento']
+        fields = '__all__'
 
 class LibroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Libro
-        fields = ['id', 'titulo', 'isbn', 'anio_publicacion', 'autor_id']
+        fields = '__all__'
