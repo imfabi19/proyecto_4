@@ -12,11 +12,12 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 import os #añadimos el import os
 from pathlib import Path
 
-from proyecto_4 import biblioteca
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = BASE_DIR / 'templates' #Añadimos lo que es templates_DIR
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates') #Añadimos lo que es templates_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework' #Añadimos el rest framework 
+    'rest_framework', #Añadimos el rest framework
     'biblioteca', # Añadimos la aplicación biblioteca
 ]
 
