@@ -14,11 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+rutas
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from biblioteca.views import crear_libro, listar_libros, modificar_libro, eliminar_libro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('/', include('biblioteca.urls')), # Se conecta a la urls de biblioteca creada
-
+    path('libro/crear', crear_libro),
+    path('libros', listar_libros),
+    path('libro/modificar/<int:id>', modificar_libro),
+    path('libro/eliminar/<int:id>', eliminar_libro),
 ]
