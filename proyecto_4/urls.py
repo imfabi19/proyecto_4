@@ -22,6 +22,7 @@ from biblioteca.views import crear_libro, listar_libros, modificar_libro, elimin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('libro/crear', crear_libro),
     path('libros', listar_libros),
     path('libro/modificar/<int:id>', modificar_libro),
